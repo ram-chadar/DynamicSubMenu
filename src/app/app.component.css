@@ -1,0 +1,66 @@
+/* Base styles for dropdown */
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin: 0;
+  padding: 0.5rem 0;
+  display: none;
+  z-index: 1000;
+  float: left;
+  min-width: 10rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+/* Show dropdown menu */
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Submenu styles */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  border-radius: 0.25rem;
+}
+
+/* Submenu arrow */
+.dropdown-item::after {
+  float: right;
+}
+
+.dropdown-submenu > .dropdown-item::after {
+/*   content: "\25B6"; */ /* ▶ */
+  float: right;
+}
+
+/* Submenu visibility on hover */
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Style adjustments for hover and focus */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #c3d7eb;
+  color: #212529;
+}
+
+.dropdown-item:active {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+/* Optional: Add transition for smooth hover effect */
+.dropdown-menu,
+.dropdown-submenu > .dropdown-menu {
+  transition: all 0.2s ease-in-out;
+}
