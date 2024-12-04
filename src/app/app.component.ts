@@ -26,7 +26,13 @@ export class AppComponent {
         {
           label: 'Submenu item 1',
           link: '#',
-          children: [],
+          children: [
+            {
+              label: 'Another action 2',
+              link: '#',
+              children: [],
+            }
+          ],
         },
         {
           label: 'Submenu item 2',
@@ -45,7 +51,19 @@ export class AppComponent {
             {
               label: 'Multi level 2',
               link: '#',
-              children: [],
+              children: [
+                {
+                  label: 'Multi levele 333',
+                  link: '#',
+                  children: [
+                    {
+                      label: 'Multi levele 444',
+                      link: '#',
+                      children: [],
+                    }
+                  ],
+                }
+              ],
             },
           ],
         },

@@ -4,15 +4,18 @@
   left: 0;
   top: 100%;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
   display: none;
   z-index: 1000;
   float: left;
-  min-width: 10rem;
-  background-color: #fff;
+  min-width: 12rem;
+  background-color: #f8f9fa; /* Light background */
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+a{
+  text-decoration: none;
 }
 
 /* Show dropdown menu */
@@ -30,6 +33,7 @@
   left: 100%;
   margin-left: 0.1rem;
   border-radius: 0.25rem;
+  background-color: #f8f9fa; /* Match parent menu */
 }
 
 /* Submenu arrow */
@@ -38,8 +42,11 @@
 }
 
 .dropdown-submenu > .dropdown-item::after {
-/*   content: "\25B6"; */ /* ▶ */
-  float: right;
+  /* Submenu arrow */
+  content: "\25B6"; /* ▶ */
+  font-size: 0.8rem;
+  color: #6c757d; /* Subtle arrow color */
+  margin-left: 0.5rem;
 }
 
 /* Submenu visibility on hover */
@@ -47,20 +54,55 @@
   display: block;
 }
 
-/* Style adjustments for hover and focus */
+/* Button-like styles for menu items */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fa; /* Light background */
+  border: none;
+  color: #495057; /* Neutral text color */
+  text-decoration: none; /* Remove link underline */
+  font-size: 1rem;
+  font-weight: 500; /* Slightly bold text */
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* Hover and focus effects */
 .dropdown-item:hover,
 .dropdown-item:focus {
-  background-color: #c3d7eb;
-  color: #212529;
+  background-color: #c3d7eb; /* Light blue hover */
+  color: #212529; /* Dark text color */
+  text-decoration: none;
 }
 
+/* Active state */
 .dropdown-item:active {
-  background-color: #e9ecef;
+  background-color: #b3cde0; /* Slightly darker blue */
   color: #212529;
+  text-decoration: none;
 }
 
-/* Optional: Add transition for smooth hover effect */
+/* Optional: Smooth transition */
+.dropdown-item,
 .dropdown-menu,
 .dropdown-submenu > .dropdown-menu {
   transition: all 0.2s ease-in-out;
+}
+
+/* Adjust padding and spacing for submenu items */
+.dropdown-submenu > .dropdown-item {
+  padding: 0.75rem 1rem;
+}
+
+/* Make submenu consistent with parent menu */
+.dropdown-submenu > .dropdown-menu {
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Remove outline when focused */
+.dropdown-item:focus {
+  outline: none;
 }
